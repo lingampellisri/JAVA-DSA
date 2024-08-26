@@ -1,0 +1,31 @@
+public class Solution {
+    public static int longestSubarrayWithSumK(int []a, long k) {
+        // Write your code here
+        int left=0;
+        int right=0;
+        long sum=a[0];
+        int maxlen=0;
+
+        while(right<a.length)
+        {
+            while(left<=right && sum>k)
+            {
+                sum=sum-a[left];
+                left++;
+            }
+
+            if(sum==k)
+            {
+                maxlen=Math.max(maxlen,right-left+1);
+            }
+             right++;
+            if(right<a.length)
+            {
+            sum=sum+a[right];
+           
+            }
+        }
+        return maxlen;
+
+    }
+}
