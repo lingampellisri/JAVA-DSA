@@ -138,3 +138,46 @@ public class Solution {
   
 
 **************************************************************************************Optimal solution*******************************************************************
+*************************************************Kadane’s Algorithm******************************
+/*
+print the subarray with the maximum sum the idea is to maintain start index of maximum_sum_ending_here at current index so that whenever maximum_sum_so_far is updated with maximum_sum_ending_here then start index and end index of subarray can be updated with start and current index.
+
+Follow the below steps to implement the idea:
+
+Initialize the variables s, start, and end with 0 and max_so_far = INT_MIN and max_ending_here = 0
+Run a for loop from 0 to N-1 and for each index i: 
+Add the arr[i] to max_ending_here.
+If max_so_far is less than max_ending_here then update max_so_far to max_ending_here and update start to s and end to i .
+If max_ending_here < 0 then update max_ending_here = 0 and s with i+1.
+Print values from index start to end.
+
+*/
+
+
+	
+import java.util.* ;
+
+import java.io.*; 
+
+public class Solution {
+	
+	public static long maxSubarraySum(int[] arr, int n) {
+	long max = Integer.MIN_VALUE; 
+    long sum = 0; 
+    
+    for (int i = 0; i < arr.length; i++) {
+        sum += arr[i];
+     
+        if (sum < 0) {
+            sum=0;
+        }
+		if(sum>max){
+			max=sum;
+
+		}   
+	}
+    return max;
+	}
+
+}
+
