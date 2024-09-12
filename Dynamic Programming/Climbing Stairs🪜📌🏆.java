@@ -51,7 +51,8 @@ Constraints:
     }
 }
 
-
+Time complexity : O(2^n)
+ Space Complexity : O(n)
 
 ********************************************************Space Optimization*************************************************
 
@@ -74,4 +75,9 @@ Constraints:
         return curr;
     }
 }
-  
+
+
+
+
+Time complexity : O(n)
+ Space Complexity : O(1)
