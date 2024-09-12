@@ -54,4 +54,24 @@ Constraints:
 
 
 ********************************************************Space Optimization*************************************************
+
+ class Solution {
+
+
+    public int climbStairs(int num) {
+
+            if(num==0||num==1)
+            return 1;
+        int prev=1;
+        int curr=1;
+        for(int i=1;i<num;i++)
+        {
+            int temp=curr;
+            curr=prev+curr;
+            // System.out.print(curr+",");
+            prev=temp;
+        }
+        return curr;
+    }
+}
   
