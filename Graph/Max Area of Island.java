@@ -117,7 +117,8 @@ class Solution {
     }
 }
 
-
+// Time complexity : O(nxm);
+// space complexity : O(nxm);
 // **************************************************optimal solution*************************************************
 
 
@@ -198,3 +199,8 @@ class Solution {
         
     }
 }
+
+
+
+// Time complexity : O(nxm);
+// space complexity : O(1);
