@@ -141,3 +141,37 @@ class Solution{
         
     }
 }
+
+
+// optimal code---------------------------------------------------------------------
+
+public class ValidShufflesBacktracking {
+
+    // Recursive backtracking function to count valid shuffles
+    public static int countValidShuffles(int N, int pos, boolean[] used) {
+        if (pos > N) {
+            return 1;
+        }
+
+        int count = 0;
+        for (int i = 1; i <= N; i++) {
+            if (!used[i] && (i % pos == 0 || pos % i == 0)) {
+                used[i] = true;
+                count += countValidShuffles(N, pos + 1, used);
+                used[i] = false;
+            }
+        }
+
+        return count;
+    }
+
+    public static int countValidShufflesBacktracking(int N) {
+        return countValidShuffles(N, 1, new boolean[N + 1]);
+    }
+
+    public static void main(String[] args) {
+        int N = 3; // Example input
+        System.out.println("Valid shuffles (Backtracking): " + countValidShufflesBacktracking(N)); // Output: 3
+    }
+}
+
