@@ -102,3 +102,42 @@ class BinaryGap{
         System.out.println(max);
     }
 }
+
+
+------------------------optimal solution-------------------------
+    import java.util.*;
+class BinaryGap{
+    
+    public static int bGap(String str)
+    {
+        int max=0;
+        int prev=-1;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)=='1')
+            {
+                if(prev!=-1 )
+                {
+                    max=Math.max(max,i-prev);
+                }
+                prev=i;
+            }
+         
+
+        }
+        return max;
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+    
+        
+        String str=Integer.toBinaryString(n);
+        
+      
+        
+        System.out.println(bGap(str));
+    }
+}
